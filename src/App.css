@@ -1,0 +1,35 @@
+*{
+  font-family: 'Quicksand', sans-serif;
+}
+
+.error_outline:focus{
+  border: 2px solid #DD0F0F !important;
+}
+
+.error_outline{
+  border: 2px solid #DD0F0F !important;
+}
+.no_outline{
+  border: 2px solid black;
+}
+
+.profile{
+  z-index: 100 !important;
+}
+
+
+.no-profile{
+  z-index: 10 !important;
+}
+
+.spinning_indicator{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: #ffffff;
+    opacity: 0.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
