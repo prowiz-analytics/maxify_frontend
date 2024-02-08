@@ -8,7 +8,7 @@ import Dash from './Pages/Dash';
 import Password from './Pages/Password';
 import PasswordPageReset from './Pages/Password';
 
-export const API = "https://dashworx-backend-2vi4s5cyva-uc.a.run.app"
+export const API = "https://dashworx-backend-7bmw5at35q-nw.a.run.app/"
 
 function App() {
   return (
