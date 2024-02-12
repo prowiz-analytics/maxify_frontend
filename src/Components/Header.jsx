@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logo from '../Assets/logo.svg';
+import logo from '../Assets/logo.jpeg';
 import loginIcon from '../Assets/Login_icon 1.svg';
 import DownArrow from '../Assets/downArrow.svg'
 import { useNavigate } from 'react-router-dom';
@@ -11,7 +11,7 @@ function Header(props) {
   const [hover,setHover] =useState(false);
   return (
     <div className="w-full h-20 flex flex-row justify-between items-center p-4 profile">
-        <img src={logo} alt="" className='h-14 cursor-pointer' onClick={()=>{if(isNavigatable){navigate('/dashboards')}}}/>
+        <img src={logo} alt="" className='h-14 w-[250px] rounded-sm cursor-pointer' onClick={()=>{if(isNavigatable){navigate('/dashboards')}}}/>
         <div className="w-[auto] relative h-8 bg-hoverColor text-[#ffffff] flex flex-row gap-2 mr-4 rounded-md justify-between items-center px-2 profile" onMouseOver={()=>setHover(true)} onMouseOut={()=>setHover(false)}>
             <img src={loginIcon} alt="" className='w-6 h-6' />
             <p className='font-bold'>My Account</p>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../Assets/logo.svg";
+import logo from "../Assets/logo.jpeg";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -65,7 +65,7 @@ function Login() {
         }
       />}
       <div className="flex flex-col gap-4 justify-center items-center">
-        <div className="">
+        <div className="w-[400px] rounded-md">
           <img src={logo} alt="" />
         </div>
         <div className="rounded-[10px] bg-[#ffffff] h-[45vh] w-[35vw] flex flex-col px-4 py-4">

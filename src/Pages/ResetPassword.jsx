@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../Assets/logo.svg";
+import logo from "../Assets/logo.jpeg";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import App, { API } from "../App";
