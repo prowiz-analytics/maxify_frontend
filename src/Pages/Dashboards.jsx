@@ -97,7 +97,7 @@ function Dashboards() {
                   className="w-[20vw] h-[30vh] bg-primaryColor hover:bg-hoverColor cursor-pointer flex flex-col justify-center items-center gap-8 rounded-[10px] text-[#ffffff]"
                   onClick={() => {
                     navigate(`/dash`, {
-                      state: { data: item.link },
+                      state: { data: JSON.parse(item.link) },
                     });
                   }}
                 >

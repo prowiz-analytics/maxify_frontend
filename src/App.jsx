@@ -7,8 +7,9 @@ import Dashboards from './Pages/Dashboards';
 import Dash from './Pages/Dash';
 import Password from './Pages/Password';
 import PasswordPageReset from './Pages/Password';
+import Admin from './Pages/Admin';
 
-export const API = "https://dashworx-backend-7bmw5at35q-nw.a.run.app/"
+export const API = "http://35.200.147.96:8000"
 
 function App() {
   return (
@@ -18,11 +19,9 @@ function App() {
           <Route path='/login' element={<Login/>}/>
           <Route path='/' element={<Login/>}/>
           <Route path='/resetpassword' element={<ResetPassword/>}/>
-          <Route path='/dash' element={<Dash/>}/>
-          <Route path='/cwv' element={<KPI/>}/>
-          <Route path='/seo' element={<KPI/>}/>
-          <Route path='/marketing' element={<KPI/>}/>
           <Route path='/dashboards' element={<Dashboards/>}/>
+          <Route path='/admin' element={<Admin/>}/>
+          <Route path='/dash' element={<Dash/>}/>
           <Route path='/resetpassword/:token' element={<PasswordPageReset/>}/>
         </Routes>
       </BrowserRouter>

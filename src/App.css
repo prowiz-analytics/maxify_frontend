@@ -17,6 +17,10 @@
   z-index: 100 !important;
 }
 
+#dynamic_form_complex{
+  width: 600px !important;
+}
+
 
 .no-profile{
   z-index: 10 !important;

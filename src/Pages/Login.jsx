@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
 import { API } from "../App"; 
+import { jwtDecode } from "jwt-decode";
 
 function Login() {
   const navigate = useNavigate();
@@ -30,14 +31,15 @@ function Login() {
         password: data.password,
       });
       console.log(request.data)
-      // console.log(request.data.dashboards)
-      // const stringify = JSON.stringify(request.data.dashboards)
-      // console.log(stringify)
-      // request.data.dashboards=JSON.parse(request.data.dashboards)
       if (request.status === 200){
-        navigate("/dashboards", {
-          state: { data: request.data },
-        });
+        const decoded = jwtDecode(request.data.token);
+        console.log(decoded)
+        if(decoded.user_type==="admin"){
+          navigate("/admin");
+        }
+        else{
+          navigate("/dashboards");
+        }
         localStorage.setItem("data", JSON.stringify(request.data))
         successNotify("Logged In Sucecssfully");
         setLoading(false);
