@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../Assets/logo.jpeg";
+import logo from "../Assets/logo.png";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import App, { API } from "../App";
@@ -9,7 +9,7 @@ import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 
 function PasswordPageReset() {
-  let {token} = useParams()
+  let { token } = useParams();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [isPassVisible, setIsPassVisible] = useState(false);
@@ -49,14 +49,15 @@ function PasswordPageReset() {
     setLoading(true);
     try {
       const changePassword = await axios.post(
-        `${API}/auth/resetpassword/${token}`,{
-            password:data.password
+        `${API}/auth/resetpassword/${token}`,
+        {
+          password: data.password,
         }
       );
       setLoading(false);
       console.log(changePassword);
       successNotify("Password Changed Successfully");
-    //   setSuccessPage(true);
+      //   setSuccessPage(true);
       console.log(data);
     } catch (err) {
       setLoading(false);
@@ -81,7 +82,7 @@ function PasswordPageReset() {
         />
       )}
       <div className="flex flex-col gap-4 justify-center items-center">
-        <div className="">
+        <div className="w-[400px] rounded-md">
           <img src={logo} alt="" />
         </div>
         {!successPage && (

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../Assets/logo.jpeg";
+import logo from "../Assets/logo.png";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../Assets/logo.jpeg";
+import logo from "../Assets/logo.png";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import App, { API } from "../App";
@@ -8,9 +8,8 @@ import { ToastContainer, toast } from "react-toastify";
 import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 
-
 function ResetPassword() {
-  const [loading,setLoading]=useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [isPassVisible, setIsPassVisible] = useState(false);
   const [emailField, setEmailField] = useState(true);
@@ -48,34 +47,38 @@ function ResetPassword() {
   const onSubmit = async (data) => {
     setLoading(true);
     try {
-      const changePassword = await axios.get(`${API}/auth/resetpassword/mail?email=${data.email}`);
+      const changePassword = await axios.get(
+        `${API}/auth/resetpassword/mail?email=${data.email}`
+      );
       setLoading(false);
       console.log(changePassword);
       // successNotify("Email");
-      setSuccessPage(true)
+      setSuccessPage(true);
       console.log(data);
     } catch (err) {
       setLoading(false);
-      notify(err.response.data.detail)
+      notify(err.response.data.detail);
     }
   };
 
   console.log(watch("example"));
   return (
     <div className="w-[100vw] h-[100vh] bg-[#D9D9D9] flex flex-col justify-around items-center">
-      {loading && <Spin
-      className="spinning_indicator"
-        indicator={
-          <LoadingOutlined
-            style={{
-              fontSize: 24,
-            }}
-            spin
-          />
-        }
-      />}
+      {loading && (
+        <Spin
+          className="spinning_indicator"
+          indicator={
+            <LoadingOutlined
+              style={{
+                fontSize: 24,
+              }}
+              spin
+            />
+          }
+        />
+      )}
       <div className="flex flex-col gap-4 justify-center items-center">
-        <div className="">
+        <div className="w-[400px] rounded-md">
           <img src={logo} alt="" />
         </div>
         {!successPage && (
@@ -131,11 +134,11 @@ function ResetPassword() {
               )} */}
 
               {emailField && (
-                 <input
-                 type="submit"
-                 value="Reset Password"
-                 className="w-[100%] items-center p-4 bg-primaryColor text-[#ffffff] font-bold rounded-md cursor-pointer"
-               />
+                <input
+                  type="submit"
+                  value="Reset Password"
+                  className="w-[100%] items-center p-4 bg-primaryColor text-[#ffffff] font-bold rounded-md cursor-pointer"
+                />
               )}
               {emailField && (
                 <div className="flex justify-center items-center">
@@ -217,9 +220,8 @@ function ResetPassword() {
                 type="submit"
                 value="Back to Login"
                 className="w-[100%] items-center p-4 bg-primaryColor text-[#ffffff] font-bold rounded-md mt-4 cursor-pointer"
-                onClick={()=>navigate('/login')}
+                onClick={() => navigate("/login")}
               />
-              
             </form>
           </div>
         )}
@@ -229,7 +231,7 @@ function ResetPassword() {
         <p className="flex flex-row justify-start  w-[90%]">
           Client Portal | Dashworx Limited
         </p>
-      <ToastContainer />
+        <ToastContainer />
       </div>
     </div>
   );

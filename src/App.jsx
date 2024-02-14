@@ -9,7 +9,7 @@ import Password from './Pages/Password';
 import PasswordPageReset from './Pages/Password';
 import Admin from './Pages/Admin';
 
-export const API = "http://35.200.147.96:8000"
+export const API = "https://maxify.prowiz.io"
 
 function App() {
   return (
