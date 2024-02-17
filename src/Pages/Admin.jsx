@@ -38,34 +38,44 @@ function Admin() {
       token: user.token,
     };
     console.log(typeof formData);
-    try{
-      const data = await axios.post(`${API}/admin/signup`, formData, { headers });
-      if(data.status === 200){
-        successNotify("Created User Successfully")
+    try {
+      const data = await axios.post(`${API}/admin/signup`, formData, {
+        headers,
+      });
+      if (data.status === 200) {
+        successNotify("Created User Successfully");
       }
-    }
-    catch(err){
-        notify(err.response.data.detail);
+    } catch (err) {
+      notify(err.response.data.detail);
     }
   };
 
   const getUser = async (formData) => {
-    console.log(formData);
-    const res = await axios.get(
-      `${API}/auth/dashboards?email=${formData.email}`
-    );
-    console.log(res.data);
-    let user_dashboards =[]
-    res.data.dashboards.map((item)=>{
-      user_dashboards.push({dashboard:JSON.parse(item.link),dashboard_name:item.name})
-    })
-    console.log(user_dashboards)
-    const items = form.getFieldValue('items');
-    items[0].dashboards = user_dashboards;
-    form.setFieldsValue({ items });
+    try {
+      console.log(formData);
+      const res = await axios.get(
+        `${API}/auth/dashboards?email=${formData.email}`
+      );
+      console.log(res.data);
+
+      let user_dashboards = [];
+      res.data.dashboards.map((item) => {
+        user_dashboards.push({
+          dashboard: JSON.parse(item.link),
+          dashboard_name: item.name,
+        });
+      });
+      console.log(user_dashboards);
+      const items = form.getFieldValue("items");
+      items[0].dashboards = user_dashboards;
+      form.setFieldsValue({ items });
+    } catch (err) {
+      console.log(err)
+      notify(err.response.data.detail);
+    }
   };
 
-  const UpdateDashboards = async (formData) =>{
+  const UpdateDashboards = async (formData) => {
     formData.dashboards.map((item) => {
       item.dashboard = JSON.stringify(item.dashboard.trim());
       item.username = formData.email;
@@ -77,13 +87,12 @@ function Admin() {
     };
     console.log(typeof formData);
     const data = await axios.post(`${API}/admin/update`, formData, { headers });
-    if(data.status === 200){
-      successNotify("Updated Dashboards Successfully")
+    if (data.status === 200) {
+      successNotify("Updated Dashboards Successfully");
+    } else {
+      notify("Something Went Wrong");
     }
-    else{
-      notify("Something Went Wrong")
-    }
-  }
+  };
 
   useEffect(() => {
     const getData = async () => {
@@ -143,13 +152,19 @@ function Admin() {
         <div className="flex justify-center items-center flex-row gap-4 ml-4">
           <button
             className="underline text-xl"
-            onClick={() => {setIsCreateUser(true);form.resetFields();}}
+            onClick={() => {
+              setIsCreateUser(true);
+              form.resetFields();
+            }}
           >
             Create User
           </button>
           <button
             className="underline text-xl"
-            onClick={() => {setIsCreateUser(false);form.resetFields();}}
+            onClick={() => {
+              setIsCreateUser(false);
+              form.resetFields();
+            }}
           >
             Update User
           </button>
@@ -383,7 +398,9 @@ function Admin() {
 
                       <Button
                         type="dashed"
-                        onClick={() => UpdateDashboards(form.getFieldsValue().items[0])}
+                        onClick={() =>
+                          UpdateDashboards(form.getFieldsValue().items[0])
+                        }
                         block
                       >
                         Update User
