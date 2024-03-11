@@ -122,7 +122,7 @@ function Login() {
       <div className="flex flex-col w-full justify-center items-center gap-2">
         <div className="w-[90%] h-[2px] bg-[#000000]"></div>
         <p className="flex flex-row justify-start  w-[90%]">
-          Client Portal | Maxify Limited
+          Client Portal | Community Juice Limited
         </p>
       <ToastContainer />
       </div>

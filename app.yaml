@@ -1,3 +1,4 @@
+service : community-juice
 runtime: nodejs20    
 handlers:
   - url: /static
