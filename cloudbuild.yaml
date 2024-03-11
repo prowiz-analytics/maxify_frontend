@@ -14,7 +14,3 @@ steps:
     args: ["app", "deploy"]
 # timeout specified for this step as deployment may take more that default time(10min)
     timeout: "30m0s" 
-
-
-  - options:
-    logging: NONE
