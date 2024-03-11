@@ -16,5 +16,5 @@ steps:
     timeout: "30m0s" 
 
 
-  options:
-  logging: NONE
+  - options:
+    logging: NONE
