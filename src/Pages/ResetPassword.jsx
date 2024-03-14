@@ -137,7 +137,7 @@ function ResetPassword() {
                 <input
                   type="submit"
                   value="Reset Password"
-                  className="w-[100%] items-center p-4 bg-primaryColor text-[#ffffff] font-bold rounded-md cursor-pointer"
+                  className="w-[100%] bg-[#F97101] items-center p-4 text-[#ffffff] font-bold rounded-md cursor-pointer"
                 />
               )}
               {emailField && (
