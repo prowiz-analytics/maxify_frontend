@@ -1,3 +1,4 @@
+service : default
 runtime: nodejs20    
 handlers:
   - url: /static

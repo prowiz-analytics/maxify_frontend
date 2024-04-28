@@ -38,7 +38,7 @@ function Login() {
           navigate("/admin");
         }
         else{
-          navigate("/dashboards");
+          navigate("/home");
         }
         localStorage.setItem("data", JSON.stringify(request.data))
         successNotify("Logged In Sucecssfully");
@@ -109,7 +109,7 @@ function Login() {
             <input
               type="submit"
               value="Login"
-              className="w-[100%] items-center p-4 bg-primaryColor text-[#ffffff] font-bold rounded-md cursor-pointer"
+              className="w-[100%] items-center p-4 bg-[#1C6E8C] text-[#ffffff] font-bold rounded-md cursor-pointer"
             />
             <div className="flex justify-end items-end">
               <Link to={"/resetpassword"} className="underline">
@@ -122,7 +122,7 @@ function Login() {
       <div className="flex flex-col w-full justify-center items-center gap-2">
         <div className="w-[90%] h-[2px] bg-[#000000]"></div>
         <p className="flex flex-row justify-start  w-[90%]">
-          Client Portal | Maxify Limited
+          Portal | Maxify Limited
         </p>
       <ToastContainer />
       </div>

@@ -77,7 +77,7 @@ function Dashboards() {
                   rows: 4,
                 }}>
                   <div
-                    className="w-[20vw] h-[30vh] bg-primaryColor hover:bg-hoverColor cursor-pointer flex flex-col justify-center items-center gap-8 rounded-[10px] text-[#ffffff]"
+                    className="w-[20vw] h-[30vh] bg-[#1C6E8C] hover:bg-hoverColor cursor-pointer flex flex-col justify-center items-center gap-8 rounded-[10px] text-[#ffffff]"
                     onClick={() => {
                       navigate(`/dash`, {
                         state: { data: item.link },
@@ -94,7 +94,7 @@ function Dashboards() {
             data?.dashboards?.map((item, index) => {
               return (
                 <div
-                  className="w-[20vw] h-[30vh] bg-primaryColor hover:bg-hoverColor cursor-pointer flex flex-col justify-center items-center gap-8 rounded-[10px] text-[#ffffff]"
+                  className="w-[20vw] h-[30vh] bg-[#1C6E8C] hover:bg-hoverColor cursor-pointer flex flex-col justify-center items-center gap-8 rounded-[10px] text-[#ffffff]"
                   onClick={() => {
                     navigate(`/dash`, {
                       state: { data: JSON.parse(item.link) },
@@ -115,6 +115,17 @@ function Dashboards() {
                 </div>
             </>
             }
+        </div>
+        <div className="w-[15vw] mt-[10vh] mb-[50px] h-auto p-4 flex flex-col justify-between items-start rounded-[10px] bg-[#D9D9D9] gap-4">
+          <div className="font-bold">
+            <p>Quick Links:</p>
+          </div>
+          <div className="flex flex-col gap-2">
+            <Link target="_blank" to={"https://dashworx.co.uk/"}>Website</Link>
+            <Link target="_blank" to={"https://dashworx.co.uk/book-a-demo/"}> 
+              Contact Dashworx
+            </Link>
+          </div>
         </div>
       </div>
       <Footer />
