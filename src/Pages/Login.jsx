@@ -38,7 +38,7 @@ function Login() {
           navigate("/admin");
         }
         else{
-          navigate("/dashboards");
+          navigate("/home");
         }
         localStorage.setItem("data", JSON.stringify(request.data))
         successNotify("Logged In Sucecssfully");
@@ -71,7 +71,7 @@ function Login() {
           <img src={logo} alt="" />
         </div>
         <div className="rounded-[10px] bg-[#ffffff] h-[45vh] w-[35vw] flex flex-col px-4 py-4">
-          <p className="text-3xl ">Login</p>
+          <p className="text-3xl">Login</p>
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col h-full justify-around"
@@ -109,7 +109,7 @@ function Login() {
             <input
               type="submit"
               value="Login"
-              className="w-[100%] bg-[#F97101] items-center p-4  text-[#ffffff] font-bold rounded-md cursor-pointer"
+              className="w-[100%] items-center p-4 bg-[#F97101] text-[#ffffff] font-bold rounded-md cursor-pointer"
             />
             <div className="flex justify-end items-end">
               <Link to={"/resetpassword"} className="underline">
@@ -122,7 +122,7 @@ function Login() {
       <div className="flex flex-col w-full justify-center items-center gap-2">
         <div className="w-[90%] h-[2px] bg-[#000000]"></div>
         <p className="flex flex-row justify-start  w-[90%]">
-          Client Portal | Community Juice Limited
+          Portal | Community Juice Limited
         </p>
       <ToastContainer />
       </div>
